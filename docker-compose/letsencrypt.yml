@@ -1,0 +1,24 @@
+version: "3"
+services:
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=998
+      - PGID=100
+      - TZ=Europe/Paris
+      - URL=duckdns.org
+      - SUBDOMAINS=dufour
+      - VALIDATION=http
+      - EMAIL= #optional
+      - DHLEVEL=4096 #optional
+      - ONLY_SUBDOMAINS=true #optional
+      - EXTRA_DOMAINS=1.dufour.xyz
+    volumes:
+      - <path>/config/letsencrypt:/config
+    ports:
+      - 50443:443
+      - 50080:80 #optional
+    restart: always

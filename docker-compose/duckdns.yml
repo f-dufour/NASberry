@@ -1,0 +1,15 @@
+version: "3"
+services:
+  duckdns:
+    image: linuxserver/duckdns
+    container_name: duckdns
+    environment:
+      - PUID=998 # admin
+      - PGID=100 # admin
+      - TZ=Europe/Paris
+      - SUBDOMAINS=dufour
+      - TOKEN= # Token here
+      - LOG_FILE=true
+    volumes:
+      - <path>/config/duckdns:/config
+    restart: always

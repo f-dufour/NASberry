@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+    core:
+        image: florentdufour/bitcoin:0.19.1-arm
+        container_name: bitcoin
+        hostname: bitcoin
+        volumes:
+        - <path>/bitcoin:/root/.bitcoin
+        stdin_open: true # -i
+        tty: true # -t
+        restart: always
