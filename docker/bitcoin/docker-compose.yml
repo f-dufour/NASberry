@@ -2,7 +2,7 @@ version: '3'
 
 services:
     core:
-        image: florentdufour/bitcoin:0.19.1-arm
+        image: florentdufour/bitcoin:0.20.1
         container_name: bitcoin
         hostname: bitcoin
         volumes:
